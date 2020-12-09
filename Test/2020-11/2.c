@@ -1,8 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-  int n, t, count = 0, max = 0;
-  t = 0;
+  int n, t = 0, count = 0, max = 0;
   scanf("%d", &n);
   int a[1000];
   int b[1000] = {0};
