@@ -5,9 +5,9 @@ int main(void){
     while((ch=getchar())!='#'){
       switch (ch)
       {
-      case ' '/* constant-expression */:
+      case ' ':
           count1++;
-          break;/* code */
+          break;
       case '\n':
           count2++;
           break;
