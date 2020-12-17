@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main(void) {
     char ch[80],a;
-    int i=0,j,index=0;
+    int i=0,j,index=-1;
     scanf("%c\n",&a);
     while((ch[i]=getchar())!='\n') {
         i++;
@@ -12,7 +12,7 @@ int main(void) {
           index=k;
       }
     }
-    if(index==0) {
+    if(index==-1) {
         printf("Not found.\n");
     }
     else {
