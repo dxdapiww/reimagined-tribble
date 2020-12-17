@@ -1,20 +1,18 @@
-#include<stdio.h>
-#include<math.h>
-int main(void) {
-    int a;
-    scanf("%d",&a);
-    if(a>=2){
-    for(int i=2;i<=a;i++) {
-      if(a%i==0 ){
-      printf("Not prime.\n");
-    }
-    else {
-        printf("prime.\n");
-         }
-    }
- }
-    else {
-        printf("invalid.\n");
-    }
-    return 0;
+    #include <stdio.h>
+    int main(){
+        int a=0;  // 素数的个数
+        int num=0;  // 输入的整数
+        printf("input a integer:");
+        scanf("%d",&num);
+        for(int i=2;i<num;i++){
+            if(num%i==0){
+                a++;  // 素数个数加1
+            }
+        }
+        if(a==0){
+            printf("%d prime.\n", num);
+        }else{
+            printf("%d not prime.\n", num);
+        }
+        return 0;
     }
