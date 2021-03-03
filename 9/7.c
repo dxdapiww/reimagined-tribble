@@ -3,7 +3,7 @@ int isalphabet(char ch);
 int main(void)
 {
     char a;
-    while ((a = getchar()) != EOF)
+    while ((a = getchar()) != '\n')
     {
         printf("%d ", isalphabet(a));
     }
