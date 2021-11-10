@@ -57,5 +57,5 @@ bins = [0,60,70,80,90,101]
 labels = ['[0,59]', '[60,69]', '[70,79]', '[80,89]', '[90,100]']
 cats1 = pandas.cut(n,labels=labels,bins=bins, right=False)
 print(cats1.value_counts())
-print("最大值:{},最小值:{},平均值:{:.2},标准差:{:.2},中位数:{}.".format(
+print("最大值:{},最小值:{},平均值:{:.2f},标准差:{:.2},中位数:{}.".format(
     maxn(n), minn(n), mean(n), math.sqrt(dev(n, mean(n))), median(n)))
