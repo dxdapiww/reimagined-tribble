@@ -4,8 +4,8 @@ import math
 nums = []
 
 
-def judge(inputdata):
-    return str.isdigit(inputdata)
+def judge(n):
+    return str.isdigit(n)
 
 
 def getNum():
@@ -14,12 +14,8 @@ def getNum():
     for row in text_data:
         tmp_list = row.split(',', 1)
         tmp_list[-1] = tmp_list[-1].replace('\n', ' ')
+        print(tmp_list)
         iNumStr = tmp_list[-1]
-        print(iNumStr)
-        # if str.isdigit(iNumStr)==True:
-        #     print("输入为非数字，请检查成绩统计文档！")
-        #     exit()
-        # else:
         nums.append(eval(iNumStr))
     return nums
 

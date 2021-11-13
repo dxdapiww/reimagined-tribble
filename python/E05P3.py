@@ -1,4 +1,3 @@
-import jieba
 import jieba.posseg as psg
 txt=open("C:\\Users\\90374\\Code\\reimagined-tribble\\python\\水浒传.txt","r",encoding='utf-8').read()
 words = psg.lcut(txt)
