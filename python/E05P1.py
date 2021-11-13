@@ -1,22 +1,26 @@
 import pandas
 import math
 
+nums = []
+
 
 def judge(inputdata):
-    a = inputdata.isdigit()
-    return a
+    return str.isdigit(inputdata)
 
 
 def getNum():
-    nums = []
-    iNumStr = input("请输入成绩(满分100，回车退出): ")
-    while iNumStr != "":
-        if judge(iNumStr) == False:
-            iNumStr = ''
-            iNumStr = input("请勿输入非数字(满分100，回车退出): ")
-        else:
-            nums.append(eval(iNumStr))
-            iNumStr = input("请输入成绩(满分100，回车退出): ")
+    text = open("C:\\Users\\90374\\Code\\成绩.txt", 'r', encoding='utf-8')
+    text_data = text.readlines()
+    for row in text_data:
+        tmp_list = row.split(',', 1)
+        tmp_list[-1] = tmp_list[-1].replace('\n', ' ')
+        iNumStr = tmp_list[-1]
+        print(iNumStr)
+        # if str.isdigit(iNumStr)==True:
+        #     print("输入为非数字，请检查成绩统计文档！")
+        #     exit()
+        # else:
+        nums.append(eval(iNumStr))
     return nums
 
 
@@ -53,9 +57,9 @@ def minn(numbers):
 
 
 n = getNum()
-bins = [0,60,70,80,90,101]
+bins = [0, 60, 70, 80, 90, 101]
 labels = ['[0,59]', '[60,69]', '[70,79]', '[80,89]', '[90,100]']
-cats1 = pandas.cut(n,labels=labels,bins=bins, right=False)
+cats1 = pandas.cut(n, labels=labels, bins=bins, right=False)
 print(cats1.value_counts())
 print("最大值:{},最小值:{},平均值:{:.2f},标准差:{:.2},中位数:{}.".format(
     maxn(n), minn(n), mean(n), math.sqrt(dev(n, mean(n))), median(n)))
