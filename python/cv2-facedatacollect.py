@@ -1,8 +1,7 @@
 import cv2
-
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 2160)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 3840)
 face_detect = cv2.CascadeClassifier(
     r'C:\\Users\\90374\\Code\\reimagined-tribble\\python\\opencv\\data\\haarcascades\\haarcascade_frontalface_default.xml')
 face_id = input('\n 输入序号:')
@@ -26,7 +25,7 @@ while True:
     #cv2.namedWindow('video', cv2.WINDOW_GUI_NORMAL)
     if cv2.waitKey(1) == 27:
         break
-    elif count >= 1000:
+    elif count >= 1500:
         break
 
 cv2.destroyAllWindows()
